@@ -1,0 +1,22 @@
+.label-titulo{
+	-fx-font: "Segoe UI";
+	-fx-font-weight:bold;
+	-fx-font-size: 27px;
+	-fx-text-fill: white;	
+}
+
+.background{
+	-fx-background-color: #1f7a7a;
+}
+
+.nome{
+	-fx-font-size: 20px;
+	-fx-text-fill: white;
+}
+
+.textFields{
+	-fx-background-color: #ffffff;
+	-fx-font-family: "Roboto Condensed";	
+	-fx-background-radius: 20;
+}
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */

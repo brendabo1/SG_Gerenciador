@@ -1,0 +1,23 @@
+.header{
+    -fx-font-size: 35pt;
+    -fx-font: "Segoe UI Semibold";
+    -fx-text-fill: red;
+}
+
+
+.label{
+	-fx-text-fill: white;
+	-fx-font: "Segoe UI";
+	-fx-font-size: 15pt;
+}
+    
+
+.background {
+    -fx-background-color: #154360;
+}
+
+.textFields{
+	-fx-background-color: #ffffff;
+	-fx-font-family: "Roboto Condensed";	
+	-fx-background-radius: 20;
+}

@@ -1,0 +1,39 @@
+.barraLateral {
+    -fx-background-color: #6959CD;
+}
+
+.barraSuperior {
+    -fx-background-color: #483D8B;
+}
+
+.mouseOn:hover {
+    -fx-background-color:#836FFF;
+    -fx-cursor: hand;
+}
+
+.highlight {
+    -fx-background-color: #E0FFFF;
+    -fx-background-radius: 15;
+}
+
+.label-titulo{
+	-fx-font: "Segoe UI";
+	-fx-font-weight:bold;
+	-fx-font-size: 27px;
+	-fx-text-fill: white;	
+}
+
+.background{
+	-fx-background-color: #1f7a7a;
+}
+
+.nome{
+	-fx-font-size: 20px;
+	-fx-text-fill: white;
+}
+
+.textFields{
+	-fx-background-color: #ffffff;
+	-fx-font-family: "Roboto Condensed";	
+	-fx-background-radius: 20;
+}
