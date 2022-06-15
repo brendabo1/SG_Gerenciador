@@ -9,6 +9,14 @@
 	-fx-background-color: #1f7a7a;
 }
 
+.background-grey{
+	-fx-background-color: #D3D3D3;
+}
+
+.menuBar{
+	-fx-background-color: #1f7a7a;
+}
+
 .nome{
 	-fx-font-size: 20px;
 	-fx-text-fill: white;
