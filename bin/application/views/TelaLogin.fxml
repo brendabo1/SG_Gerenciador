@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" styleClass="background" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" styleClass="background" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerTelaLogin">
    <children>
-      <PasswordField layoutX="202.0" layoutY="191.0" prefHeight="25.0" prefWidth="223.0" styleClass="textFields" />
-      <TextField layoutX="202.0" layoutY="126.0" prefHeight="25.0" prefWidth="223.0" styleClass="textFields" />
+      <PasswordField fx:id="campoSenha" layoutX="202.0" layoutY="182.0" prefHeight="25.0" prefWidth="223.0" promptText="Senha" styleClass="textFields" />
+      <TextField fx:id="campoIDUser" layoutX="202.0" layoutY="126.0" prefHeight="25.0" prefWidth="223.0" promptText="ID" styleClass="textFields" />
       <Label layoutX="90.0" layoutY="125.0" prefHeight="30.0" prefWidth="75.0" styleClass="nome" text="User ID" />
-      <Label layoutX="90.0" layoutY="190.0" styleClass="nome" text="Senha" />
+      <Label layoutX="90.0" layoutY="180.0" styleClass="nome" text="Senha" />
       <Label layoutX="217.0" layoutY="42.0" styleClass="label-titulo" text="Login">
          <font>
             <Font name="Georgia Bold" size="10.0" />
          </font>
       </Label>
+      <Button fx:id="buttonLogin" layoutX="425.0" layoutY="249.0" mnemonicParsing="false" styleClass="botaoLogin" text="Login" />
+      <Label fx:id="msgErro" layoutX="92.0" layoutY="221.0" prefHeight="17.0" prefWidth="327.0" styleClass="mensagemRed" />
    </children>
 </AnchorPane>
