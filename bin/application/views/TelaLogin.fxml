@@ -7,18 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" styleClass="background" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerTelaLogin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="480.0" styleClass="background" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerTelaLogin">
    <children>
-      <PasswordField fx:id="campoSenha" layoutX="202.0" layoutY="182.0" prefHeight="25.0" prefWidth="223.0" promptText="Senha" styleClass="textFields" />
-      <TextField fx:id="campoIDUser" layoutX="202.0" layoutY="126.0" prefHeight="25.0" prefWidth="223.0" promptText="ID" styleClass="textFields" />
-      <Label layoutX="90.0" layoutY="125.0" prefHeight="30.0" prefWidth="75.0" styleClass="nome" text="User ID" />
-      <Label layoutX="90.0" layoutY="180.0" styleClass="nome" text="Senha" />
-      <Label layoutX="217.0" layoutY="42.0" styleClass="label-titulo" text="Login">
+      <PasswordField fx:id="campoSenha" layoutX="169.0" layoutY="183.0" prefHeight="25.0" prefWidth="229.0" promptText="Senha" styleClass="textFields" />
+      <TextField fx:id="campoIDUser" layoutX="169.0" layoutY="127.0" prefHeight="25.0" prefWidth="223.0" promptText="ID" styleClass="textFields" />
+      <Label layoutX="80.0" layoutY="124.0" prefHeight="30.0" prefWidth="75.0" styleClass="nome" text="User ID" />
+      <Label layoutX="80.0" layoutY="180.0" styleClass="nome" text="Senha" />
+      <Label layoutX="204.0" layoutY="45.0" styleClass="label-tituloLogin" text="Login">
          <font>
             <Font name="Georgia Bold" size="10.0" />
          </font>
       </Label>
-      <Button fx:id="buttonLogin" layoutX="425.0" layoutY="249.0" mnemonicParsing="false" styleClass="botaoLogin" text="Login" />
+      <Button fx:id="buttonLogin" layoutX="404.0" layoutY="251.0" mnemonicParsing="false" onAction="#checaLogin" styleClass="botaoLogin" text="Login" />
       <Label fx:id="msgErro" layoutX="92.0" layoutY="221.0" prefHeight="17.0" prefWidth="327.0" styleClass="mensagemRed" />
    </children>
 </AnchorPane>

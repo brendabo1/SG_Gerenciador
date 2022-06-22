@@ -1,40 +1,50 @@
 package application.controllers;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
+import application.model.BancoDeDados;
+import application.model.subsistemtest.SubsistemUsuario;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class ControllerTelaLogin implements Initializable{
+public class ControllerTelaLogin {
 
     private Parent root;
-    private Scene scene;
-    private Stage stage;
+    private Stage janela;
+    private BancoDeDados bancoDados = new BancoDeDados();
+    private SubsistemUsuario subUsuario = new SubsistemUsuario(bancoDados);
 	
 	@FXML
-    private TextField campoIDUser;
+    private TextField campoIDUser = null;
 
     @FXML
-    private PasswordField campoSenha;
+    private PasswordField campoSenha = null;
+    
+    @FXML
+    private Label msgErro;
     
     @FXML
     private Button buttonLogin;
+    
+    @FXML
+    public void checaLogin(ActionEvent event) throws IOException{ 	
+    	if(subUsuario.login(campoIDUser.getText(), campoSenha.getText())) {
+			carregaTela("/application/views/TelaHome.fxml");
+    	}
+    	else msgErro.setText("ID ou senha incorretos");
+	
+    }
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		//buttonLogin.setText("Logado");
+	public void carregaTela(String caminho) throws IOException {
+		root = FXMLLoader.load(getClass().getResource(caminho));
+		janela = (Stage) buttonLogin.getScene().getWindow();
+		janela.setScene(new Scene(root));
 	}
     
     /*@FXML

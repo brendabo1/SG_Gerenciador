@@ -15,8 +15,7 @@ public class Main extends Application {
 			//AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("views/TelaLogin.fxml"));
 			Parent root = FXMLLoader.load(getClass().getResource("views/TelaLogin.fxml"));
 			
-			Scene sceneLogin = new Scene(root,500,300);
-			primaryStage.setScene(sceneLogin);
+			Scene sceneLogin = new Scene(root);
 			sceneLogin.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setResizable(false);
 			primaryStage.setTitle("SG Gerenciador");
