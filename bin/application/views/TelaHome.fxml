@@ -9,30 +9,30 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerTelaHome">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerTelaHome">
    <left>
-      <VBox prefHeight="500.0" prefWidth="186.0" styleClass="menuBar" BorderPane.alignment="CENTER">
+      <VBox prefHeight="600.0" prefWidth="231.0" styleClass="menuBar" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="144.0" prefWidth="186.0">
+            <Pane prefHeight="154.0" prefWidth="231.0">
                <children>
-                  <Label layoutX="32.0" layoutY="118.0" prefHeight="19.0" prefWidth="122.0" text="SG Gerenciador" textFill="WHITE">
+                  <Label layoutX="49.0" layoutY="116.0" prefHeight="23.0" prefWidth="137.0" text="SG Gerenciador" textFill="WHITE">
                      <font>
-                        <Font name="Segoe UI Bold" size="16.0" />
+                        <Font name="Segoe UI Bold" size="18.0" />
                      </font></Label>
-                  <ImageView fitHeight="78.0" fitWidth="74.0" layoutX="56.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="78.0" fitWidth="74.0" layoutX="81.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../resources/local_localstoreicon.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
-            <Button fx:id="buttonUsuarios" mnemonicParsing="false" onAction="#pageUsuarios" prefHeight="50.0" prefWidth="187.0" styleClass="menuBar" text="Usuarios" />
-            <Button fx:id="buttonFornecedores" mnemonicParsing="false" onAction="#pageFornecedores" prefHeight="50.0" prefWidth="186.0" styleClass="menuBar" text="Fornecedores" />
-            <Button fx:id="buttonCardapio" mnemonicParsing="false" onAction="#pageCardapio" prefHeight="50.0" prefWidth="187.0" styleClass="menuBar" text="Cardapio" />
-            <Button fx:id="buttonProdutos" mnemonicParsing="false" onAction="#pageProdutos" prefHeight="50.0" prefWidth="187.0" styleClass="menuBar" text="Produtos" />
-            <Button fx:id="buttonEstoque" mnemonicParsing="false" onAction="#pageEstoque" prefHeight="50.0" prefWidth="186.0" styleClass="menuBar" text="Estoque" />
-            <Button fx:id="buttonVendas" mnemonicParsing="false" onAction="#pageVendas" prefHeight="50.0" prefWidth="186.0" styleClass="menuBar" text="Vendas" />
-            <Button fx:id="buttonClientes" mnemonicParsing="false" onAction="#pageClientes" prefHeight="50.0" prefWidth="186.0" styleClass="menuBar" text="Clientes" />
+            <Button fx:id="buttonUsuarios" mnemonicParsing="false" onAction="#pageUsuarios" prefHeight="64.0" prefWidth="234.0" styleClass="menuBar" text="Usuarios" />
+            <Button fx:id="buttonFornecedores" mnemonicParsing="false" onAction="#pageFornecedores" prefHeight="64.0" prefWidth="238.0" styleClass="menuBar" text="Fornecedores" />
+            <Button fx:id="buttonCardapio" mnemonicParsing="false" onAction="#pageCardapio" prefHeight="64.0" prefWidth="243.0" styleClass="menuBar" text="Cardapio" />
+            <Button fx:id="buttonProdutos" mnemonicParsing="false" onAction="#pageProdutos" prefHeight="64.0" prefWidth="232.0" styleClass="menuBar" text="Produtos" />
+            <Button fx:id="buttonEstoque" mnemonicParsing="false" onAction="#pageEstoque" prefHeight="64.0" prefWidth="235.0" styleClass="menuBar" text="Estoque" />
+            <Button fx:id="buttonVendas" mnemonicParsing="false" onAction="#pageVendas" prefHeight="64.0" prefWidth="231.0" styleClass="menuBar" text="Vendas" />
+            <Button fx:id="buttonClientes" mnemonicParsing="false" onAction="#pageClientes" prefHeight="64.0" prefWidth="237.0" styleClass="menuBar" text="Clientes" />
          </children>
       </VBox>
    </left>

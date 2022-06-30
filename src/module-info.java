@@ -4,6 +4,10 @@ module SistemaAutomacao {
 	requires javafx.graphics;
 	requires javafx.base;
 	
-	opens application to javafx.graphics, javafx.fxml;
+	opens application to javafx.graphics, javafx.fxml, javafx.base;
 	opens application.controllers to javafx.fxml;
+	
+	
+	exports application;
+	exports application.model.entidades;
 }

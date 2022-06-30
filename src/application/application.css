@@ -1,4 +1,4 @@
-.label-tituloLogin{
+.label-tituloWhite{
 	-fx-font-family: "Segoe UI";
 	-fx-font-weight:bold;
 	-fx-font-size: 27px;
@@ -24,7 +24,7 @@
 .menuBar{
 	-fx-background-color: #1f7a7a;
 	-fx-font-family: "Segoe UI";
-	-fx-font-size: 16px;
+	-fx-font-size: 18px;
 	-fx-text-fill: white;
 }
 
@@ -53,12 +53,72 @@
 	-fx-text-fill: red;
 }
 
-.table-view{
+.table-view {
+    -fx-control-inner-background: white;
+    -fx-background-color: transparent;
+    -fx-table-header-border-color: transparent;   
+}
+
+.table-view .column-header-background{
+	-fx-background-color: #155555;
+	-fx-background-radius: 8px 8px 0px 0px;
+	
+}
+
+.table-view .column-header, .table-view .filler{
+	-fx-background-color: transparent;
+	-fx-size: 40;
+	-fx-padding: 10;
+	
+}
+
+.table-view .corner {
+	-fx-background-color: transparent;
+}
+
+.table-view .column-header .label{
+	-fx-font-weight: bold; 
+	-fx-alignment: center-left;
+	-fx-text-fill: white;
+	-fx-font-size: 15px;
+}
+
+.table-view .table-cell{
     -fx-border-color: transparent;
-    -fx-font-family: "Segoe UI";
+    -fx-padding: 2 0 2 10px;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: #78AFAF;
+}
+
+.table-row-cell:empty {
+	-fx-background-color: transparent;
+}
+
+.table-row-cell:filled:hover {
+	-fx-background-color: #BBD7D7;
 }
 
 .button-add{
 	-fx-graphic: url(../images/EdenCodingIcon.png);
+}
+
+
+.button-cadastro{
+	-fx-background-color: #4974a5;
+}
+
+
+.button-edit{
+	-fx-background-color: #7a49a5;
+}
+
+.button-excluir{
+	-fx-background-color: #dc3e3f;
+}
+
+.janela-CRUD{
+	-fx-background-color: #1f7a7a;
 }
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */

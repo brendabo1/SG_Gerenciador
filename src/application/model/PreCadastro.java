@@ -20,14 +20,23 @@ import application.model.gerenciadores.GerenciamentoUsuario;
 import application.model.gerenciadores.GerenciamentoVenda;
 
 public class PreCadastro {
-	BancoDeDados banco = new BancoDeDados();
-	GerenciamentoUsuario gerUsuario = new GerenciamentoUsuario(banco);
-	GerenciamentoFornecedor gerFornecedor = new GerenciamentoFornecedor(banco);
-	GerenciamentoProduto gerProduto = new GerenciamentoProduto(banco, gerFornecedor);
-	GerenciamentoLote gerLote = new GerenciamentoLote(banco);
-	GerenciamentoItemCardapio gerItemCardapio = new GerenciamentoItemCardapio(banco, gerLote);
-	GerenciamentoVenda gerVenda = new GerenciamentoVenda(banco, gerItemCardapio, gerLote);
-
+	BancoDeDados banco;
+	GerenciamentoUsuario gerUsuario;
+	GerenciamentoFornecedor gerFornecedor;
+	GerenciamentoProduto gerProduto;
+	GerenciamentoLote gerLote;
+	GerenciamentoItemCardapio gerItemCardapio;
+	GerenciamentoVenda gerVenda;
+	
+	public PreCadastro(BancoDeDados banco) {
+		this.banco = banco;
+		this.gerUsuario = new GerenciamentoUsuario(banco);
+		this.gerFornecedor = new GerenciamentoFornecedor(banco);
+		this.gerProduto = new GerenciamentoProduto(banco, gerFornecedor);
+		this.gerLote = new GerenciamentoLote(banco);
+		this.gerItemCardapio = new GerenciamentoItemCardapio(banco, gerLote);
+		this.gerVenda = new GerenciamentoVenda(banco, gerItemCardapio, gerLote);
+	}
 	
 	public void fornecedor() {
 		gerFornecedor.cadastrar("Paulo", "91919191919", "Rua Ansiedade");
