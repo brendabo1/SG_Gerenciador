@@ -1,5 +1,7 @@
 package application.model.gerenciadores;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -7,7 +9,16 @@ import java.util.HashSet;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import application.model.entidades.EntidadesDoSistema;
+import application.model.entidades.Venda;
 
 /**
  * Classe pai das demais classes de gerenciamento.
@@ -19,7 +30,7 @@ abstract public class GerenciamentoGeral {
 	private HashSet<String> id_cadastrados = new HashSet<>();
 	
 	/**
-	 * Mï¿½todo para gerar identificacao sem repeticoes.
+	 * Método para gerar identificacao sem repeticoes.
 	 * @param preFixo preFixo especifico da entidade.
 	 * @return retorna a nova identificacao.
 	 */
@@ -37,7 +48,7 @@ abstract public class GerenciamentoGeral {
 	}
 	
 	/**
-	 * Mï¿½todo para adicionar uma entidade em um HashMap, utilizado sua identificacao como chave.
+	 * Método para adicionar uma entidade em um HashMap, utilizado sua identificacao como chave.
 	 * @param <T> Objeto generico que seja do tipo EntidadesDoSistema.
 	 * @param map_entidade HashMap generico das entidades.
 	 * @param obj objeto generico.
@@ -99,7 +110,7 @@ abstract public class GerenciamentoGeral {
 	public <T extends EntidadesDoSistema> EntidadesDoSistema buscarEntidade_ID(HashMap<String, T> map_entidade, String id_buscada) {
 		EntidadesDoSistema entidade;
 		entidade = map_entidade.get(id_buscada);
-		if(entidade == null) throw new NoSuchElementException("ID nï¿½o encontrado");
+		if(entidade == null) throw new NoSuchElementException("ID não encontrado");
 		return entidade;
 	}
 	
@@ -109,4 +120,31 @@ abstract public class GerenciamentoGeral {
 		ArrayList<T> lista = new ArrayList<>(colecao);
 		return lista;
 	}
+	
+	/**
+	 * Gera um arquivo PDF com os dados recebidos
+	 * @param titulo Titulo do arquivo
+	 * @param informacoes Lista de Vendas selecionadas para compor o arquivo
+	 * @throws FileNotFoundException
+	 * @throws DocumentException
+	 */
+	public void gerarPDF(String titulo, String informacoes) {
+			
+		Document docpdf = new Document();
+		try {
+			PdfWriter.getInstance(docpdf, new FileOutputStream("D:\\RELATORIO.pdf"));
+			docpdf.open();
+			docpdf.setPageSize(PageSize.A4);
+			docpdf.add(new Paragraph(informacoes));
+			
+		} catch (FileNotFoundException | DocumentException e) {
+			e.printStackTrace();
+		} 
+			
+		docpdf.close();
+		
+	}
+	
+	
+	
 }

@@ -1,7 +1,7 @@
 package application.model.validacoes;
 
 /**
- * Classe responsï¿½vel por identificar os objetos e valores correspondentes ao usuario aceito pelo sistema.
+ * Classe responsável por identificar os objetos e valores correspondentes ao usuario aceito pelo sistema.
  * @author Brenda Barbosa
  * @author Elmer Carvalho
  */
@@ -24,17 +24,16 @@ public class ValidaUsuario {
 	}
 	
 	/**
-	 * Verifica se o usuario ï¿½ valido a partir da validacao de nome e senha
+	 * Verifica se o usuario é valido a partir da validacao de nome e senha
 	 * @param nome String correspondente ao nome
 	 * @param senha String correspondente a senha
 	 * @return true caso atinnja os requisitos ou false contrario
 	 * @throws IllegalArgumentException
 	 */
-	public boolean isUsuarioValido(String nome, String senha) throws IllegalArgumentException{
+	public boolean isUsuarioValido(String nome, String senha) {
 		if(this.isNomeValido(nome)) {
 			if(this.isSenhaValido(senha)) return true;
 		}
-		else throw new IllegalArgumentException();
 		return false;
 	}	
 

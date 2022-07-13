@@ -20,7 +20,7 @@ public class ItemCardapio extends EntidadesDoSistema {
 		
 		/**
 		 * Construtor do item.
-		 * @param id Identificaï¿½ï¿½o do item.
+		 * @param id Identificação do item.
 		 * @param nome Nome do item.
 		 * @param ingredientes HashMap dos ingredientes que compoe o item.
 		 * @param preco Preco do item.
@@ -37,7 +37,7 @@ public class ItemCardapio extends EntidadesDoSistema {
 		
 		@Override
 		public String toString() {
-			String message = String.format("\nID: %s  NOME: %s  PREï¿½O: %.2f  CATEGORIA: %s  \nINGREDIENTES: ", this.id, this.nome, this.preco, this.categoria.toString());
+			String message = String.format("\nID: %s  NOME: %s  PREÇO: %.2f  CATEGORIA: %s  \nINGREDIENTES: ", this.id, this.nome, this.preco, this.categoria.toString());
 					
 			for (IngredienteDoItem i: this.ingredientes.values()) 
 					message +=  i.toString()+  " | "; 		

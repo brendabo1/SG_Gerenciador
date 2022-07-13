@@ -18,10 +18,10 @@ public class Fornecedor extends EntidadesDoSistema {
 		
 		/**
 		 * Construtor da entidade fornecedor.
-		 * @param id Identificaï¿½ï¿½o ï¿½nica da entidade.
+		 * @param id Identificação única da entidade.
 		 * @param CNPJ cnpj do fornecedor.
 		 * @param nome nome do fornecedor.
-		 * @param endereco endereï¿½o do fornecedor.
+		 * @param endereco endereço do fornecedor.
 		 */
 		public Fornecedor(String id, String CNPJ, String nome, String endereco) {
 			this.id = id;

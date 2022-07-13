@@ -8,12 +8,12 @@ import java.time.format.DateTimeFormatter;
  * @author Elmer Carvalho
  *@author Brenda Barbosa
  */
-public class Lote extends EntidadesDoSistema {
+public class Lote extends EntidadesDoSistema implements Comparable<Lote> {
 		private Produto produto;
 		private Double unidades_compradas;
 		private Double preco;
 		private LocalDate validade;
-		private Double quantidade_em_armazenamento;
+		private Double quantidade_em_armazenamento = 0.0;
 		final private static String preFixo = "LOT";
 		
 		/**
@@ -30,7 +30,7 @@ public class Lote extends EntidadesDoSistema {
 				this.preco = preco_unitario;
 				this.validade = validade;
 				this.id = id;
-				this.quantidade_em_armazenamento = this.unidades_compradas + produto.getConteudo_produto();
+				this.quantidade_em_armazenamento += this.unidades_compradas * produto.getConteudo_produto();
 		}
 	
 		
@@ -43,7 +43,7 @@ public class Lote extends EntidadesDoSistema {
 		}
 		
 		public String linhaTituloToString() {
-			String message = String.format("\n%2s %19s %22s %12s", "ID LOT", "PRODUTO", "PREï¿½O", "QNT", "VALIDADE");
+			String message = String.format("\n%2s %19s %22s %12s", "ID LOT", "PRODUTO", "PREÇO", "QNT", "VALIDADE");
 			return message;
 		}
 	
@@ -91,5 +91,15 @@ public class Lote extends EntidadesDoSistema {
 
 		public static String getPreFixo() {
 			return preFixo;
+		}
+
+
+
+		public int compareTo(Lote outroLote) {
+			if (this.validade.isAfter(outroLote.getValidade()))
+				return -1;
+			if (this.validade.isBefore(outroLote.getValidade()))
+				return 1;
+			return 0;
 		}
 }

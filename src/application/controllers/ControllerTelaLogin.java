@@ -1,7 +1,8 @@
 package application.controllers;
 import java.io.IOException;
 import application.model.BancoDeDados;
-import application.model.subsistemtest.SubsistemUsuario;
+import application.model.entidades.Usuario;
+import application.model.facades.FacadePrincipal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,8 +18,9 @@ public class ControllerTelaLogin {
 
     private Parent root;
     private Stage janela;
-    private BancoDeDados bancoDados = new BancoDeDados();
-    private SubsistemUsuario subUsuario = new SubsistemUsuario(bancoDados);
+    private BancoDeDados bancoDados = BancoDeDados.getInstance();
+    private FacadePrincipal sistema = new FacadePrincipal(bancoDados);
+
 	
 	@FXML
     private TextField campoIDUser = null;
@@ -34,10 +36,13 @@ public class ControllerTelaLogin {
     
     @FXML
     public void checaLogin(ActionEvent event) throws IOException{ 	
-    	if(subUsuario.login(campoIDUser.getText(), campoSenha.getText())) {
-			carregaTela("/application/views/TelaHome.fxml");
-    	}
-    	else msgErro.setText("ID ou senha incorretos");
+    	try {    		
+    		sistema.loginUsuario(campoIDUser.getText(), campoSenha.getText());
+    		carregaTela("/application/views/TelaHome.fxml");
+    		
+    	}catch (IllegalArgumentException e) {
+			msgErro.setText(e.getMessage());
+		}
 	
     }
 
@@ -46,7 +51,9 @@ public class ControllerTelaLogin {
 		janela = (Stage) buttonLogin.getScene().getWindow();
 		janela.setScene(new Scene(root));
 	}
-    
+
+	
+	
     /*@FXML
     void login(KeyEvent event) {
         if(event.getCode() == KeyCode.ENTER) {

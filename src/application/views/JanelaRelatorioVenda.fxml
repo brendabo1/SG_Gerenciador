@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="513.0" styleClass="background" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerJanelaRelatorioVenda">
+   <children>
+      <Label fx:id="labelTitulo" layoutX="154.0" layoutY="25.0" prefHeight="33.0" prefWidth="194.0" styleClass="label-tituloWhite" text="Gerar Relatorio" />
+      <Label fx:id="msg" layoutX="60.0" layoutY="66.0" prefHeight="30.0" prefWidth="382.0" styleClass="nome" />
+      <DatePicker fx:id="dataInicial" layoutX="244.0" layoutY="169.0" prefHeight="30.0" prefWidth="128.0" />
+      <DatePicker fx:id="dataFinal" layoutX="244.0" layoutY="213.0" prefHeight="30.0" prefWidth="128.0" />
+      <Label layoutX="181.0" layoutY="169.0" prefHeight="17.0" prefWidth="26.0" styleClass="nome" text="De" />
+      <Label layoutX="181.0" layoutY="213.0" prefHeight="30.0" prefWidth="44.0" styleClass="nome" text="Ate" />
+      <Button fx:id="buttonGeral" layoutX="207.0" layoutY="110.0" mnemonicParsing="false" onAction="#gerarRelatorioGeral" styleClass="botaoOK" text="Gerar" />
+      <Label layoutX="33.0" layoutY="112.0" styleClass="nome" text="Todas as Vendas" />
+      <Label layoutX="41.0" layoutY="184.0" styleClass="nome" text="Por Periodo" />
+      <Button fx:id="buttonPorPeriodo" layoutX="400.0" layoutY="182.0" mnemonicParsing="false" onAction="#gerarRelatorioPorPeriodo" styleClass="botaoOK" text="Gerar" />
+      <ComboBox fx:id="comboBoxCategoria" layoutX="186.0" layoutY="265.0" prefHeight="25.0" prefWidth="194.0" styleClass="choiceBox" />
+      <Label layoutX="33.0" layoutY="263.0" styleClass="nome" text="Por Categoria" />
+      <Button fx:id="buttonPorCategoria" layoutX="412.0" layoutY="260.0" mnemonicParsing="false" onAction="#gerarRelatorioPorCategoria" styleClass="botaoOK" text="Gerar" />
+   </children>
+</AnchorPane>

@@ -1,10 +1,10 @@
 package application.model.gerenciadores;
 
 import java.util.HashMap;
-import java.util.NoSuchElementException;
 
 import application.model.BancoDeDados;
 import application.model.entidades.Usuario;
+import application.model.entidades.enums.Cargo;
 
 /**
  * Classe para a aplicacao de operacoes do usuario do sistema
@@ -14,15 +14,18 @@ import application.model.entidades.Usuario;
 
 public class GerenciamentoUsuario extends GerenciamentoGeral {
 		private HashMap<String, Usuario> map_usuarios;
-
+		private static Usuario usuario_logado;
+		
 		/**
 		 * Construtor do gerenciamento de usuario
 		 * @param banco Classe responsavel por armazenar os dados dos usuarios
 		 */
 		public GerenciamentoUsuario(BancoDeDados banco) {
 			this.map_usuarios = banco.getMap_usuarios();
+			
 			if (this.map_usuarios.isEmpty())
-				cadastrar("admin", "admin");
+				usuario_logado = cadastrar("admin", "admin", Cargo.GERENTE);
+			
 		}
 		
 		/**
@@ -31,14 +34,14 @@ public class GerenciamentoUsuario extends GerenciamentoGeral {
 		 * @param senha Senha a ser cadastrada
 		 * @return Novo Usuario ou null caso o castro nao seja realizado
 		 */
-		public Usuario cadastrar(String nome, String senha) {	
+		public Usuario cadastrar(String nome, String senha, Cargo tipoDeUsuario) {	
 				String novo_id;
 				if (this.map_usuarios.isEmpty())
 						novo_id = Usuario.getPrefixo() + "00000";
 				else
 						novo_id = gerarID(Usuario.getPrefixo());
 				
-				Usuario novo_usuario = new Usuario(nome, senha, novo_id);
+				Usuario novo_usuario = new Usuario(nome, senha, tipoDeUsuario, novo_id);
 				if (adicionar(map_usuarios, novo_usuario))
 					return novo_usuario;
 				return null;
@@ -47,15 +50,17 @@ public class GerenciamentoUsuario extends GerenciamentoGeral {
 		 * Verifica se os dados do usuario estao cadastrados para realizar o login
 		 * @param id Identificacao do usuario
 		 * @param senha Senha a ser comparada com a senha cadastrada
-		 * @return true caso os dados estejam corretos ou flase caso o usuario nï¿½o seja encontrado ou a senha nao corresponda
+		 * @return true caso os dados estejam corretos ou flase caso o usuario não seja encontrado ou a senha nao corresponda
 		 */
 		public boolean loginID(String id, String senha) {
 			Usuario usuario = this.map_usuarios.get(id);
 			if (usuario == null)
-					return false;
+				return false;
 			
-			if (usuario.getSenha().equals(senha))
-					return true;
+			if (usuario.getSenha().equals(senha)) {
+				usuario_logado = usuario;
+				return true;
+			}
 			return false;
 		}
 		/**
@@ -78,9 +83,30 @@ public class GerenciamentoUsuario extends GerenciamentoGeral {
 			usuario.setSenha(nova_senha);
 			return usuario.getSenha().equals(nova_senha);
 		}
-
+		
+		public boolean editarCargo (Cargo novo_cargo, Usuario usuario) {
+			usuario.setTipoDeUsuario(novo_cargo);
+			return usuario.getTipoDeUsuario().equals(novo_cargo);
+		}
+		
+		public boolean excluirUsuario(String ID) {
+			if (ID.equals(usuario_logado.getId()))
+				return false;
+			
+			return excluir(this.map_usuarios, ID);
+		}
+		
+		
 		public HashMap<String, Usuario> getMap_usuarios() {
 			return map_usuarios;
 		}
 
+		public Usuario getUsuario_logado() {
+			return usuario_logado;
+		}
+
+		public void setUsuario_logado(Usuario usuario_logado) {
+			usuario_logado = usuario_logado;
+		}
+				
 }

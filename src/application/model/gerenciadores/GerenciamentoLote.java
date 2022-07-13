@@ -4,7 +4,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+
 /*
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -18,7 +21,6 @@ import application.model.BancoDeDados;
 import application.model.entidades.EntidadesDoSistema;
 import application.model.entidades.Lote;
 import application.model.entidades.Produto;
-import application.model.entidades.Venda;
 
 /**
  * Classe para aplicacao de operacoes na entidade Lote.
@@ -39,7 +41,7 @@ public class GerenciamentoLote extends GerenciamentoGeral {
 		}
 		
 	/**
-	 * Mï¿½todo para cadastro do lote.
+	 * Método para cadastro do lote.
 	 * @param produto produto que compoe o lote.
 	 * @param quantidade_comprada quantidade comprada do produto.
 	 * @param preco_unitario preco do produto.
@@ -55,7 +57,7 @@ public class GerenciamentoLote extends GerenciamentoGeral {
 	}
 	
 	/**
-	 * Mï¿½todo para consumir os produtos do lote.
+	 * Método para consumir os produtos do lote.
 	 * @param quantidade_consumida grandeza numerica referente a unidade de medida do produto que sera consumido.
 	 * @param nome_produto nome do produto que sera consumido.
 	 * @return retorna false se nao consumir e true se consumir.
@@ -82,11 +84,11 @@ public class GerenciamentoLote extends GerenciamentoGeral {
 				break;
 			}
 		}
-	return true;
+		return true;
 	}
 	
 	/**
-	 * Mï¿½todo para edicao do produto do lote.
+	 * Método para edicao do produto do lote.
 	 * @param novo_produto novo produto do lote.
 	 * @param lote lote que sera modificado.
 	 * @return retorna true se editar e false se nao editar.
@@ -170,57 +172,39 @@ public class GerenciamentoLote extends GerenciamentoGeral {
 			}
 			return false;
 		}
-	 	/*
-	 	private boolean gerarPDF(String titulo, ArrayList<Lote> listaEstoque) throws FileNotFoundException, DocumentException {
-			//ArrayList<Lote> listaEstoque= this.convertHashToArr(bancoDados.getMap_estoque());
-	 		Document docpdf = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
-			PdfWriter.getInstance(docpdf, new FileOutputStream("src\\PDF_Venda.pdf")); 
-			docpdf.open();
-			Paragraph pTitulo = new Paragraph(15F , titulo, FontFactory.getFont(FontFactory.HELVETICA, 18F));
-			Paragraph pLinha = new Paragraph(12F , listaEstoque.get(0).linhaTituloToString(), FontFactory.getFont(FontFactory.HELVETICA, 15F));
-			pTitulo.setAlignment(Element.ALIGN_CENTER);
-			docpdf.add(pTitulo);
-			docpdf.add(pLinha);
-			for(Lote l:listaEstoque) {
-				Paragraph pMessage = new Paragraph(15F , l.toString(), FontFactory.getFont(FontFactory.HELVETICA, 15F));
-				pTitulo.setAlignment(Element.ALIGN_JUSTIFIED);
-				docpdf.add(pMessage);
-			}
-				
-			docpdf.close();
-			return true;
-		}
 	 	
-	 	public boolean gerarPDFEstoqueTotal(HashMap<String, Lote> map_estoque) throws FileNotFoundException, DocumentException {
-	 		ArrayList<Lote> listaEstoque= this.convertHashToArr(map_estoque);
-	 		return this.gerarPDF("Estoque Total", listaEstoque);
-	 		
-	 	}
-	 	
-	 	public boolean gerarPDFEstoqueProduto(String nomeProduto, HashMap<String, Lote> map_estoque) throws FileNotFoundException, DocumentException {
-	 		ArrayList<String> listaIDsLotes = this.agrupamentoDeLotes.get(nomeProduto);
-			ArrayList<Lote> listaEstoqueProduto = new ArrayList<>(); 
-			for(String loteProduto: listaIDsLotes) {
-				listaEstoqueProduto.add(map_estoque.get(loteProduto));
-			}
-			String titulo = "Estoque: " + nomeProduto;
-	 		return this.gerarPDF(titulo, listaEstoqueProduto); 
-	 		
-	 	}
-	 	
-	 	*/
-	 	
+
 	 	public HashMap<String, Lote> getMap_estoque() {
 			return map_estoque;
 		}
 		public HashMap<String, ArrayList<String>> getAgrupamentoDeLotes() {
 			return agrupamentoDeLotes;
 		}
+		
+		
+		public String gerarStringOrdenadaDoEstoqueAVencer() {
+			String texto = new String();
+			List<Lote> lista = new ArrayList<>();
+			
+			for (Lote lote : this.map_estoque.values())
+				lista.add(lote);
+			
+			if (lista.isEmpty())
+				return null;
+			
+			Collections.sort(lista);
+			
+			texto += "Quantidade de Lotes: " + lista.size() + "\n";
+			for (Lote lote : lista) 
+				texto += lote.toString() + "\n";
+			
+			return texto;
+		}
 	
-	
-		// Nï¿½o deve ser utilizado, por isso sobrescrevi. Utilize o outro mï¿½todo de exclusï¿½o.
+		// Não deve ser utilizado, por isso sobrescrevi. Utilize o outro método de exclusão.
 	 	@Override
 		public <T extends EntidadesDoSistema> boolean excluir(HashMap<String, T> map_entidade, String ID_buscado) {
 	 		return false;
 	 	}
+	 	
 }

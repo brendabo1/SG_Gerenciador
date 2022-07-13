@@ -23,7 +23,7 @@ public class GerenciamentoFornecedor extends GerenciamentoGeral {
 		}
 		
 		/**
-		 * Mï¿½todo para cadastro de fornecedor.
+		 * Método para cadastro de fornecedor.
 		 * @param nome nome do fornecedor.
 		 * @param CNPJ cnpj do fornecedor
 		 * @param endereco endereco do fornecedor.
@@ -38,7 +38,7 @@ public class GerenciamentoFornecedor extends GerenciamentoGeral {
 		}
 						
 		/**
-		 * Mï¿½todo para editar nome do fornecedor.
+		 * Método para editar nome do fornecedor.
 		 * @param novo_nome novo nome do fornecedor.
 		 * @param fornecedor fornecedor que sera alterado.
 		 * @return retorna true caso altere e false caso nao altere.
@@ -49,7 +49,7 @@ public class GerenciamentoFornecedor extends GerenciamentoGeral {
 		}
 		
 		/**
-		 * Mï¿½todo para editar cnpj de fornecedor.
+		 * Método para editar cnpj de fornecedor.
 		 * @param novo_CNPJ novo cnpj de fornecedor.
 		 * @param fornecedor fornecedor que sera alterado.
 		 * @return retorna true caso altere e false caso nao altere.
@@ -60,7 +60,7 @@ public class GerenciamentoFornecedor extends GerenciamentoGeral {
 		}
 		
 		/**
-		 * Mï¿½todo para editar o endereco do fornecedor.
+		 * Método para editar o endereco do fornecedor.
 		 * @param novo_endereco novo endereco do fornecedor.
 		 * @param fornecedor fornecedor que sera alterado.
 		 * @return retorna true caso altere e false caso nao altere.
@@ -71,7 +71,7 @@ public class GerenciamentoFornecedor extends GerenciamentoGeral {
 		}
 		
 		/**
-		 * Mï¿½todo para adicionar um produto na lista de produtos fornecidos.
+		 * Método para adicionar um produto na lista de produtos fornecidos.
 		 * @param novo_produto novo produto que sera fornecido.
 		 * @param fornecedor fornecedor que recebera o novo produto.
 		 * @return retorna true caso altere e false caso nao altere.
@@ -82,7 +82,7 @@ public class GerenciamentoFornecedor extends GerenciamentoGeral {
 		}
 		
 		/**
-		 * Mï¿½todo para remover um produto da lista de produtos fornecidos.
+		 * Método para remover um produto da lista de produtos fornecidos.
 		 * @param id_selecionado identificacao do produto selecionado.
 		 * @param fornecedor fornecedor que sera alterado.
 		 * @return returna true caso remova e  false caso nao remova.
@@ -94,5 +94,18 @@ public class GerenciamentoFornecedor extends GerenciamentoGeral {
 
 		public HashMap<String, Fornecedor> getMap_fornecedores() {
 			return map_fornecedores;
+		}
+		
+		public String gerarStringDeTodosOsFornecedores() {
+			String texto = new String();
+			
+			texto += "Quantidade de Fornecedores: " + this.map_fornecedores.values().size() + "\n";
+			for (Fornecedor fornecedor : this.map_fornecedores.values())
+				texto += fornecedor.toString() + "\n";
+			
+			if (texto.isEmpty())
+				return null;
+			
+			return texto;
 		}
 }

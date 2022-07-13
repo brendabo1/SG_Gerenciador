@@ -1,7 +1,7 @@
 package application.model.validacoes;
 
 /**
- * Classe responsï¿½vel por identificar os objetos e valores correspondentes ao produto aceito pelo sistema.
+ * Classe responsável por identificar os objetos e valores correspondentes ao produto aceito pelo sistema.
  * @author Brenda Barbosa
  * @author Elmer Carvalho
  */
@@ -16,16 +16,16 @@ public class ValidaProduto implements ValidaString, ValidaNumero{
 		return ValidaString.stringTamMin(nome, 3);
 	}
 	/**
-	 * Verifica se a quantidade correspondente ao conteudo do produto ï¿½ um numero valido
+	 * Verifica se a quantidade correspondente ao conteudo do produto é um numero valido
 	 * @param qnt Quantidade numerica do conteudo do produto
 	 * @return true se o numero real for valido ou false caso nao atinja os requisitos
 	 */
-	public boolean isConteudoProdutoValido(Double qnt) {
+	public boolean isConteudoProdutoValido(double qnt) {
 		return ValidaNumero.isDoublePositivo(qnt);
 	}
 	
 	/**
-	 * Verifica se o produto ï¿½ valido a partir da validacao de nome e quantidade do conteudo
+	 * Verifica se o produto é valido a partir da validacao de nome e quantidade do conteudo
 	 * @param nome String correspondente ao nome do produto
 	 * @param qnt Quantidade numerica do conteudo do produto
 	 * @return true caso atinnja os requisitos ou false caso nao atinja

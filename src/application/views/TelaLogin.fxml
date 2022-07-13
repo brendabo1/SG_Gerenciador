@@ -18,7 +18,7 @@
             <Font name="Georgia Bold" size="10.0" />
          </font>
       </Label>
-      <Button fx:id="buttonLogin" layoutX="404.0" layoutY="251.0" mnemonicParsing="false" onAction="#checaLogin" styleClass="botaoLogin" text="Login" />
-      <Label fx:id="msgErro" layoutX="176.0" layoutY="210.0" prefHeight="19.0" prefWidth="223.0" styleClass="mensagemRed" />
+      <Button fx:id="buttonLogin" layoutX="404.0" layoutY="251.0" mnemonicParsing="false" onAction="#checaLogin" styleClass="botaoOK" text="Login" />
+      <Label fx:id="msgErro" layoutX="176.0" layoutY="210.0" prefHeight="19.0" prefWidth="223.0" styleClass="mensagemRedBold" />
    </children>
 </AnchorPane>

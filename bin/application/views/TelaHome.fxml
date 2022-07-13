@@ -26,13 +26,22 @@
                   </ImageView>
                </children>
             </Pane>
-            <Button fx:id="buttonUsuarios" mnemonicParsing="false" onAction="#pageUsuarios" prefHeight="64.0" prefWidth="234.0" styleClass="menuBar" text="Usuarios" />
-            <Button fx:id="buttonFornecedores" mnemonicParsing="false" onAction="#pageFornecedores" prefHeight="64.0" prefWidth="238.0" styleClass="menuBar" text="Fornecedores" />
-            <Button fx:id="buttonCardapio" mnemonicParsing="false" onAction="#pageCardapio" prefHeight="64.0" prefWidth="243.0" styleClass="menuBar" text="Cardapio" />
-            <Button fx:id="buttonProdutos" mnemonicParsing="false" onAction="#pageProdutos" prefHeight="64.0" prefWidth="232.0" styleClass="menuBar" text="Produtos" />
-            <Button fx:id="buttonEstoque" mnemonicParsing="false" onAction="#pageEstoque" prefHeight="64.0" prefWidth="235.0" styleClass="menuBar" text="Estoque" />
-            <Button fx:id="buttonVendas" mnemonicParsing="false" onAction="#pageVendas" prefHeight="64.0" prefWidth="231.0" styleClass="menuBar" text="Vendas" />
-            <Button fx:id="buttonClientes" mnemonicParsing="false" onAction="#pageClientes" prefHeight="64.0" prefWidth="237.0" styleClass="menuBar" text="Clientes" />
+            <Button fx:id="buttonUsuarios" mnemonicParsing="false" onAction="#pageUsuarios" prefHeight="60.0" prefWidth="234.0" styleClass="menuBar" text="Usuarios" />
+            <Button fx:id="buttonFornecedores" mnemonicParsing="false" onAction="#pageFornecedores" prefHeight="60.0" prefWidth="238.0" styleClass="menuBar" text="Fornecedores" />
+            <Button fx:id="buttonCardapio" mnemonicParsing="false" onAction="#pageCardapio" prefHeight="60.0" prefWidth="243.0" styleClass="menuBar" text="Cardapio" />
+            <Button fx:id="buttonProdutos" mnemonicParsing="false" onAction="#pageProdutos" prefHeight="60.0" prefWidth="232.0" styleClass="menuBar" text="Produtos" />
+            <Button fx:id="buttonEstoque" mnemonicParsing="false" onAction="#pageEstoque" prefHeight="60.0" prefWidth="235.0" styleClass="menuBar" text="Estoque" />
+            <Button fx:id="buttonVendas" mnemonicParsing="false" onAction="#pageVendas" prefHeight="60.0" prefWidth="231.0" styleClass="menuBar" text="Vendas" />
+            <Button fx:id="buttonClientes" mnemonicParsing="false" onAction="#pageClientes" prefHeight="60.0" prefWidth="237.0" styleClass="menuBar" text="Clientes" />
+            <Button fx:id="botaoLogout" mnemonicParsing="false" onAction="#logout" prefHeight="29.0" prefWidth="231.0" styleClass="menuBar" text="LogOut">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/logoutBranco.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </VBox>
    </left>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="783.0" styleClass="background" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerJanelaCadastroItemCardapio">
+   <children>
+      <Label fx:id="labelTitulo" layoutX="302.0" layoutY="30.0" prefHeight="33.0" prefWidth="186.0" styleClass="label-tituloWhite" text="Cadastro Item" />
+      <Button fx:id="buttonOK" layoutX="711.0" layoutY="406.0" mnemonicParsing="false" onAction="#closeJanela" styleClass="botaoOK" text="OK" />
+      <Label layoutX="126.0" layoutY="122.0" prefHeight="30.0" prefWidth="59.0" styleClass="nome" text="Nome" />
+      <TextField fx:id="campoNome" layoutX="203.0" layoutY="122.0" prefHeight="24.0" prefWidth="295.0" styleClass="textFields" />
+      <Label layoutX="228.0" layoutY="278.0" prefHeight="30.0" prefWidth="105.0" styleClass="nome" text="Produto" />
+      <Label fx:id="msgErro" layoutX="185.0" layoutY="78.0" prefHeight="24.0" prefWidth="428.0" styleClass="mensagemRed" />
+      <ChoiceBox fx:id="choiceBoxProdutos" layoutX="333.0" layoutY="272.0" prefHeight="43.0" prefWidth="370.0" styleClass="choiceBox" />
+      <Spinner fx:id="spinnerQnt" layoutX="340.0" layoutY="324.0" prefHeight="35.0" prefWidth="114.0" />
+      <Label layoutX="28.0" layoutY="298.0" prefHeight="33.0" prefWidth="178.0" styleClass="label-tituloWhite" text="Ingredientes" />
+      <Button fx:id="buttonAddProduto" layoutX="492.0" layoutY="325.0" mnemonicParsing="false" onAction="#adicionaIngrediente" prefHeight="35.0" prefWidth="53.0" styleClass="botaoOK" text="add" />
+      <Label fx:id="displayIngredientes" layoutX="34.0" layoutY="376.0" prefHeight="30.0" prefWidth="663.0" styleClass="label-display" />
+      <ChoiceBox fx:id="choiceBoxCategoria" layoutX="203.0" layoutY="163.0" prefHeight="30.0" prefWidth="287.0" styleClass="choiceBox" />
+      <Label layoutX="88.0" layoutY="163.0" prefHeight="30.0" prefWidth="96.0" styleClass="nome" text="Categoria" />
+      <Label layoutX="221.0" layoutY="327.0" prefHeight="30.0" prefWidth="105.0" styleClass="nome" text="Quantidade" />
+      <Spinner fx:id="spinnerPreco" layoutX="206.0" layoutY="210.0" prefHeight="35.0" prefWidth="140.0" />
+      <Label layoutX="126.0" layoutY="213.0" prefHeight="30.0" prefWidth="53.0" styleClass="nome" text="Valor" />
+   </children>
+</AnchorPane>

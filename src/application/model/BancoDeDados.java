@@ -3,6 +3,7 @@ package application.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import application.model.entidades.Cliente;
 import application.model.entidades.Fornecedor;
 import application.model.entidades.ItemCardapio;
 import application.model.entidades.Lote;
@@ -11,21 +12,30 @@ import application.model.entidades.Usuario;
 import application.model.entidades.Venda;
 
 /**
- *  Classe responsï¿½vel por armazenar todas as estruturas de dados e suas respectivas informacoes a serem manipuladas
+ *  Classe responsável por armazenar todas as estruturas de dados e suas respectivas informacoes a serem manipuladas
  * @author Brenda Babrosa
- * @author Elmer Cravalho
+ * @author Elmer Carvalho
  */
 public class BancoDeDados {
 	
-		private HashMap<String, Produto> map_produtos = new HashMap<>();
-		private HashMap<String, ItemCardapio> map_itensCardapio = new HashMap<>();
-		private HashMap<String, Fornecedor> map_fornecedores = new HashMap<>();
-		private HashMap<String, Venda> map_vendas = new HashMap<>();
-		private HashMap<String, Usuario> map_usuarios = new HashMap<>();
-		private HashMap<String, Lote> map_estoque = new HashMap<>();
-		private HashMap<String, ArrayList<String>> agrupamentoDeLotes = new HashMap<>();
-
+	private static final BancoDeDados UnicoBanco = new BancoDeDados();
+	
+	private HashMap<String, Produto> map_produtos = new HashMap<>();
+	private HashMap<String, ItemCardapio> map_itensCardapio = new HashMap<>();
+	private HashMap<String, Fornecedor> map_fornecedores = new HashMap<>();
+	private HashMap<String, Venda> map_vendas = new HashMap<>();
+	private HashMap<String, Usuario> map_usuarios = new HashMap<>();
+	private HashMap<String, Lote> map_estoque = new HashMap<>();
+	private HashMap<String, ArrayList<String>> agrupamentoDeLotes = new HashMap<>();
+	private HashMap<String, Cliente> map_clientes = new HashMap<>();
+	
+	private BancoDeDados() {
 		
+	}
+	
+	public static BancoDeDados getInstance() {
+		return UnicoBanco;
+	}
 	
 	public HashMap<String, Produto> getMap_produtos() {
 		return map_produtos;
@@ -80,5 +90,13 @@ public class BancoDeDados {
 	}
 	public void setAgrupamentoDeLotes(HashMap<String, ArrayList<String>> agrupamentoDeLotes) {
 		this.agrupamentoDeLotes = agrupamentoDeLotes;
+	}
+	
+	
+	public HashMap<String, Cliente> getMap_clientes() {
+		return map_clientes;
+	}
+	public void setMap_clientes(HashMap<String, Cliente> map_clientes) {
+		this.map_clientes = map_clientes;
 	}
 }

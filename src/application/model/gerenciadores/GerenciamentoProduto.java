@@ -13,80 +13,71 @@ import application.model.entidades.enums.UnidadeMedida;
  * @author Brenda Barbosa
  */
 public class GerenciamentoProduto extends GerenciamentoGeral{
-		private HashMap<String, Produto> map_produtos;
-		private GerenciamentoFornecedor gerFornecedor;
+	private HashMap<String, Produto> map_produtos;
+	private GerenciamentoFornecedor gerFornecedor;
 
-		/**
-		 * Construtor do gerenciamento de produto.
-		 * @param banco objeto que armazena as estruturas de dados
-		 * @param gerFornecedor
-		 */
-		public GerenciamentoProduto(BancoDeDados banco, GerenciamentoFornecedor gerFornecedor) {
-			this.map_produtos = banco.getMap_produtos();
-			this.gerFornecedor = gerFornecedor;
-		}
-		
-		/**
-		 * Cadastra um novo produto no sistema
-		 * @param nome Nome do produto
-		 * @param fornecedor Objeto fornecedor do produto
-		 * @param unidade Unidade de Medida correspondente
-		 * @param quantidade_conteudo grandeza numerica referente ao conteudo do produto
-		 * @return O produto cadastrado ou null caso o cadastro nao seja realizado
-		 */
-		public Produto cadastrar(String nome, Fornecedor fornecedor, UnidadeMedida unidade, Double quantidade_conteudo) {
-			String novo_id = gerarID(Produto.getPreFixo());
-			Produto novo_produto = new Produto(novo_id, nome, fornecedor, unidade, quantidade_conteudo);
-			if (adicionar(map_produtos, novo_produto) && gerFornecedor.adicionarProdutoEmFornecedor(novo_produto, fornecedor))
-				return novo_produto;
-			return null;
-		}
-		/**
-		 * Edita o nome do produto cadastrado
-		 * @param novo_nome Novo nome vinculado ao prosuto
-		 * @param produto Objeto produto a ser editado
-		 * @return
-		 */
-		public boolean editarNome(String novo_nome, Produto produto) {
-			produto.setNome(novo_nome);
-			return produto.getNome().equals(novo_nome);
-		}
-		/**
-		 * Edita o fornecedor vinculado ao produto
-		 * @param novo_fornecedor Novo objeto fornecedor a ser vinculado ao produto
-		 * @param produto Objeto produto a ser editado
-		 * @return true se o fornecedor foi editado com sucesso ou false caso a edicao falhe
-		 */
-		public boolean editarFornecedor(Fornecedor novo_fornecedor, Produto produto) {
-			produto.setFornecedor(novo_fornecedor);
-			return produto.getFornecedor().equals(novo_fornecedor);
-		}
-		/**
-		 * Edita a unidade de medida vinculado ao produto
-		 * @param nova_unidade Nova unidade de medida a ser vinculada ao produto
-		 * @param produto Produto a ser editado
-		 * @return
-		 */
-		public boolean editarUnidadeMedida(UnidadeMedida nova_unidade, Produto produto) {
-			produto.setUnidade_medida(nova_unidade);
-			return produto.getUnidade_medida().equals(nova_unidade);
-		}
-		/**
-		 * Edita a quantidade numerica do conteudo vinculado ao produto
-		 * @param nova_quantidadeConteudo Nova quantidade a ser vinculada ao produto
-		 * @param produto Produto a ser editado
-		 * @return
-		 */
-		public boolean editarQuantidadeConteudo (Double nova_quantidadeConteudo, Produto produto) {
-			produto.setConteudo_produto(nova_quantidadeConteudo);
-			return produto.getConteudo_produto().equals(nova_quantidadeConteudo);
-		}
-		
-		public HashMap<String, Produto> getMap_produtos() {
-			return map_produtos;
-		}
+	/**
+	 * Construtor do gerenciamento de produto.
+	 * @param banco objeto que armazena as estruturas de dados
+	 * @param gerFornecedor
+	 */
+	public GerenciamentoProduto(BancoDeDados banco) {
+		this.map_produtos = banco.getMap_produtos();
+		this.gerFornecedor = new GerenciamentoFornecedor(banco);
+	}
+	
+	/**
+	 * Cadastra um novo produto no sistema
+	 * @param nome Nome do produto
+	 * @param fornecedor Objeto fornecedor do produto
+	 * @param unidade Unidade de Medida correspondente
+	 * @param quantidade_conteudo grandeza numerica referente ao conteudo do produto
+	 * @return O produto cadastrado ou null caso o cadastro nao seja realizado
+	 */
+	public Produto cadastrar(String nome, Fornecedor fornecedor, UnidadeMedida unidade, Double quantidade_conteudo) {
+		String novo_id = gerarID(Produto.getPreFixo());
+		Produto novo_produto = new Produto(novo_id, nome,  unidade, quantidade_conteudo);
+		if (adicionar(map_produtos, novo_produto) && gerFornecedor.adicionarProdutoEmFornecedor(novo_produto, fornecedor))
+			return novo_produto;
+		return null;
+	}
+	/**
+	 * Edita o nome do produto cadastrado
+	 * @param novo_nome Novo nome vinculado ao prosuto
+	 * @param produto Objeto produto a ser editado
+	 * @return
+	 */
+	public boolean editarNome(String novo_nome, Produto produto) {
+		produto.setNome(novo_nome);
+		return produto.getNome().equals(novo_nome);
+	}
 
-		public void setMap_produtos(HashMap<String, Produto> map_produtos) {
-			this.map_produtos = map_produtos;
-		}
+	/**
+	 * Edita a unidade de medida vinculado ao produto
+	 * @param nova_unidade Nova unidade de medida a ser vinculada ao produto
+	 * @param produto Produto a ser editado
+	 * @return
+	 */
+	public boolean editarUnidadeMedida(UnidadeMedida nova_unidade, Produto produto) {
+		produto.setUnidade_medida(nova_unidade);
+		return produto.getUnidade_medida().equals(nova_unidade);
+	}
+	/**
+	 * Edita a quantidade numerica do conteudo vinculado ao produto
+	 * @param nova_quantidadeConteudo Nova quantidade a ser vinculada ao produto
+	 * @param produto Produto a ser editado
+	 * @return
+	 */
+	public boolean editarQuantidadeConteudo (Double nova_quantidadeConteudo, Produto produto) {
+		produto.setConteudo_produto(nova_quantidadeConteudo);
+		return produto.getConteudo_produto().equals(nova_quantidadeConteudo);
+	}
+	
+	public HashMap<String, Produto> getMap_produtos() {
+		return map_produtos;
+	}
+
+	public void setMap_produtos(HashMap<String, Produto> map_produtos) {
+		this.map_produtos = map_produtos;
+	}
 }

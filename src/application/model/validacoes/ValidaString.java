@@ -1,7 +1,7 @@
 package application.model.validacoes;
 
 /**
- * Interface responsï¿½vel por identificar e validar as Strings aceitas pelas entidades do sistema
+ * Interface responsável por identificar e validar as Strings aceitas pelas entidades do sistema
  * @author Brenda Barbosa
  * @author Elmer Carvalho
  */
@@ -9,9 +9,9 @@ package application.model.validacoes;
 public interface ValidaString {
 	
 	/**
-	 * Remove os espaï¿½os separadores internos de uma string a ser verificada
+	 * Remove os espaços separadores internos de uma string a ser verificada
 	 * @param str a palavra a ser analisada
-	 * @return a palavra sem espaï¿½os internos
+	 * @return a palavra sem espaços internos
 	 */
 	
 	private static String stringSemEspacos(String str) {
@@ -24,9 +24,9 @@ public interface ValidaString {
 		return str;
 	}
 	/**
-	 * Verifica se a string possui o tamanho mï¿½nimo especificado
+	 * Verifica se a string possui o tamanho mínimo especificado
 	 * @param entrada string a ser analisada
-	 * @param tam_min tam_min comprimento mï¿½nimo ao qual a String entrada deve atender
+	 * @param tam_min tam_min comprimento mínimo ao qual a String entrada deve atender
 	 * @return true se a string nao nula possuir comprimento igual ou superior ao tamanho minimo especificado
 	 */
 	public static boolean stringTamMin(String entrada, int tam_min) {
@@ -34,9 +34,9 @@ public interface ValidaString {
 	}
 	
 	/**
-	 * Verifica se a String contendo numeros e/ou letras apenas possui ou nï¿½o um comprimento mï¿½nimo 
+	 * Verifica se a String contendo numeros e/ou letras apenas possui ou não um comprimento mínimo 
 	 * @param entrada string a ser analisada 
-	 * @param tam_min comprimento mï¿½nimo ao qual a String entrada deve atender
+	 * @param tam_min comprimento mínimo ao qual a String entrada deve atender
 	 * @return true se a entrada for alfanumerica e de comprimento superior ou igual ao tamanho minimo especificado
 	 */
 	
@@ -45,9 +45,9 @@ public interface ValidaString {
 	}
 	
 	/**
-	 * Verifica se a String contendo apenas letras possui ou nï¿½o um comprimento mï¿½nimo 
+	 * Verifica se a String contendo apenas letras possui ou não um comprimento mínimo 
 	 * @param entrada string a ser analisada 
-	 * @param tam_min comprimento mï¿½nimo ao qual a String entrada deve atender
+	 * @param tam_min comprimento mínimo ao qual a String entrada deve atender
 	 * @return true se a entrada for alfabetica e de comprimento superior ou igual ao tamanho minimo
 	 */
 	public static boolean isAlfabetica(String entrada, int tam_min) {
@@ -55,9 +55,9 @@ public interface ValidaString {
 	}
 	
 	/**
-	 * Verifica se a String contendo apenas numeros possui ou nï¿½o um comprimento mï¿½nimo.
+	 * Verifica se a String contendo apenas numeros possui ou não um comprimento mínimo.
 	 * @param entrada string a ser analisada 
-	 * @param tam_min comprimento mï¿½nimo ao qual a String entrada deve atender
+	 * @param tam_min comprimento mínimo ao qual a String entrada deve atender
 	 * @return true se a entrada for composta apenas por numeros e de comprimento superior ou igual ao tamanho minimo especificado
 	 */
 	public static boolean isNumeric(String entrada, int tam_min) {    
@@ -65,7 +65,7 @@ public interface ValidaString {
 	}
 	
 	/**
-	 * Verifica se a String contendo apenas numeros possui ou nï¿½o um comprimento exato.
+	 * Verifica se a String contendo apenas numeros possui ou não um comprimento exato.
 	 * @param entrada string a ser analisada 
 	 * @param tam comprimento exato ao qual a String entrada deve atender
 	 * @return true se a entrada for composta apenas por numeros e de comprimento igual ao tamanho especificado
@@ -75,9 +75,9 @@ public interface ValidaString {
 	}
 	
 	/**
-	 * Verifica se a String, formada por uma ou mais strings, ï¿½ alfanumerica e atende ao comprimento mï¿½nimo.
-	 * @param entrada sequencia a ser analisada podendo ser composta por uma ou mais palavras separadas por espaï¿½os 
-	 * @param tam_min comprimento mï¿½nimo ao qual a String entrada deve atender
+	 * Verifica se a String, formada por uma ou mais strings, é alfanumerica e atende ao comprimento mínimo.
+	 * @param entrada sequencia a ser analisada podendo ser composta por uma ou mais palavras separadas por espaços 
+	 * @param tam_min comprimento mínimo ao qual a String entrada deve atender
 	 * @return true se a entrada for composta por letras e/ou numeros e de comprimento superior ou igual ao tamanho minimo especificado
 	 */
 	public static boolean isAlfaNumericaComposta(String entrada, int tam_min) {
@@ -85,9 +85,9 @@ public interface ValidaString {
 		return ValidaString.isAlfaNumerica(ValidaString.stringSemEspacos(entrada), tam_min);
 	}
 	/**
-	 * Verifica se a String, formada por uma ou mais strings, ï¿½ alfanumerica e atende ao comprimento mï¿½nimo.
-	 * @param entrada sequencia a ser analisada podendo ser composta por uma ou mais palavras separadas por espaï¿½os 
-	 * @param tam_min comprimento mï¿½nimo ao qual a String entrada deve atender
+	 * Verifica se a String, formada por uma ou mais strings, é alfanumerica e atende ao comprimento mínimo.
+	 * @param entrada sequencia a ser analisada podendo ser composta por uma ou mais palavras separadas por espaços 
+	 * @param tam_min comprimento mínimo ao qual a String entrada deve atender
 	 * @return true se a entrada for composta por letras e/ou numeros e de comprimento superior ou igual ao tamanho minimo especificado
 	 */
 	

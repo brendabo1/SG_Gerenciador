@@ -14,7 +14,7 @@ public class IngredienteDoItem extends EntidadesDoSistema{
 	 * Construtor do ingrediente.
 	 * @param produto Entidade produto utilizado.
 	 * @param quantidade_usada Quantidade do produto.
-	 * @param id Identificaï¿½ï¿½o do Ingrediente. 
+	 * @param id Identificação do Ingrediente. 
 	 */
 	 public IngredienteDoItem (Produto produto, Double quantidade_usada, String id) {
 		this.id = id;

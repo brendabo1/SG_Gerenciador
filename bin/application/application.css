@@ -39,18 +39,38 @@
 	-fx-background-radius: 20;
 }
 
-.botaoLogin{
+.textArea{
+	-fx-background-color: #c0c0c0;
+	-fx-font-family: "Segoe UI";	
+	-fx-background-radius: 20;
+}
+
+.choiceBox{
+	-fx-background-color: #ffffff;
+	-fx-font-family: "Segoe UI";	
+	-fx-background-radius: 20;
+}
+
+
+.botaoOK{
 	-fx-background-color: white;
 	-fx-font-size: 16px;
 	-fx-text-fill: #1f7a7a;
 	-fx-background-radius: 10;
 }
 
-.mensagemRed{
+.mensagemRedBold{
 	-fx-font-family: "Segoe UI";
 	-fx-font-weight:bold;
 	-fx-font-size: 16px;
-	-fx-text-fill: red;
+	-fx-text-fill: #b90000;
+}
+
+.mensagemRed{
+	-fx-font-family: "Segoe UI";
+	-fx-font-weight:bold;
+	-fx-font-size: 15px;
+	-fx-text-fill: #b90000;
 }
 
 .table-view {
@@ -100,25 +120,43 @@
 	-fx-background-color: #BBD7D7;
 }
 
-.button-add{
-	-fx-graphic: url(../images/EdenCodingIcon.png);
-}
-
 
 .button-cadastro{
-	-fx-background-color: #4974a5;
+	-fx-background-color: #3D7A5B;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-size: 13px;
+	-fx-background-radius: 8;
 }
 
 
 .button-edit{
-	-fx-background-color: #7a49a5;
+	-fx-background-color: #4974a5;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-size: 13px;
+	-fx-background-radius: 8;
+	
 }
 
 .button-excluir{
 	-fx-background-color: #dc3e3f;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-size: 13px;
+	-fx-background-radius: 8;
 }
 
-.janela-CRUD{
-	-fx-background-color: #1f7a7a;
+.button-icon{
+	-fx-background-color: transparent;
+	-fx-background-radius: 50;
 }
+
+.label-display{
+	-fx-font-family: "Segoe UI";
+	-fx-background-color: #808080;
+	-fx-font-size: 16px;
+	-fx-text-fill: white;	
+}
+
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */

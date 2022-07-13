@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="783.0" styleClass="background" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ControllerJanelaEdicaoVenda">
+   <children>
+      <Label fx:id="labelTitulo" layoutX="302.0" layoutY="30.0" prefHeight="33.0" prefWidth="186.0" styleClass="label-tituloWhite" text="Edicao Venda" />
+      <Button fx:id="buttonOK" layoutX="711.0" layoutY="406.0" mnemonicParsing="false" onAction="#closeJanela" styleClass="botaoOK" text="OK" />
+      <Label layoutX="230.0" layoutY="120.0" prefHeight="30.0" prefWidth="59.0" styleClass="nome" text="Item" />
+      <Label fx:id="msgErro" layoutX="106.0" layoutY="80.0" prefHeight="24.0" prefWidth="519.0" styleClass="mensagemRed" />
+      <Spinner fx:id="spinnerQnt" layoutX="337.0" layoutY="176.0" prefHeight="35.0" prefWidth="114.0" />
+      <Label layoutX="45.0" layoutY="151.0" prefHeight="33.0" prefWidth="114.0" styleClass="label-tituloWhite" text="Carrinho" />
+      <Button fx:id="buttonAddProduto" layoutX="489.0" layoutY="177.0" mnemonicParsing="false" onAction="#adicionaItem" prefHeight="35.0" prefWidth="53.0" styleClass="botaoOK" text="add" />
+      <Label layoutX="148.0" layoutY="361.0" prefHeight="30.0" prefWidth="199.0" styleClass="nome" text="Forma de Pagamento" />
+      <Label layoutX="218.0" layoutY="179.0" prefHeight="30.0" prefWidth="105.0" styleClass="nome" text="Quantidade" />
+      <ComboBox fx:id="comboBoxClientes" layoutX="381.0" layoutY="288.0" prefHeight="42.0" prefWidth="254.0" styleClass="choiceBox" />
+      <Label layoutX="268.0" layoutY="300.0" prefHeight="30.0" prefWidth="69.0" styleClass="nome" text="Cliente" />
+      <ComboBox fx:id="comboBoxPagamento" layoutX="382.0" layoutY="361.0" prefHeight="30.0" prefWidth="254.0" styleClass="choiceBox" />
+      <ComboBox fx:id="comboBoxItens" layoutX="331.0" layoutY="116.0" prefHeight="35.0" prefWidth="370.0" styleClass="choiceBox" />
+      <Button fx:id="buttonRemove" layoutX="555.0" layoutY="177.0" mnemonicParsing="false" onAction="#removerItem" prefHeight="35.0" prefWidth="86.0" styleClass="botaoOK" text="remover" />
+      <DatePicker fx:id="pickerData" layoutX="381.0" layoutY="237.0" prefHeight="35.0" prefWidth="248.0" />
+      <Label layoutX="276.0" layoutY="239.0" prefHeight="30.0" prefWidth="53.0" styleClass="nome" text="Data" />
+   </children>
+</AnchorPane>

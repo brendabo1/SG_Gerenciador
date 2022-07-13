@@ -1,7 +1,7 @@
 package application.model.validacoes;
 
 /**
- * Classe responsï¿½vel por identificar os objetos e valores correspondentes ao Item do Cardapio aceito pelo sistema.
+ * Classe responsável por identificar os objetos e valores correspondentes ao Item do Cardapio aceito pelo sistema.
  * @author Brenda Barbosa
  * @author Elmer Carvalho
  */
@@ -15,7 +15,7 @@ public class ValidaItemCardapio {
 		return ValidaString.stringTamMin(nomeItem, 3);
 	}
 	/**
-	 * Verifica se o numero correspondente ao preco do item ï¿½ um numero real positivo
+	 * Verifica se o numero correspondente ao preco do item é um numero real positivo
 	 * @param preco Numero real a ser verificado
 	 * @return true se o numero real for positivo ou false caso seja negativo
 	 * @throws IllegalArgumentException
