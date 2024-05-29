@@ -24,3 +24,23 @@
   <li>Padrão de Projeto Facade</li>
   <li>UML</li>  
 </ul>
+
+<h2>Interface do Usuário</h2>
+<div align="center">
+  <figure>  
+    <img src="resources/SG Gerenciador login.gif">
+    <figcaption>
+      <p align="center"><b>Figura 1</b> -Interface de login do usuário</p>
+      <p align="center">Fonte: Autoral</p>
+    </figcaption>
+  </figure>
+</div>
+<div align="center">
+  <figure>  
+    <img src="resources/SG Gerenciador.gif">
+    <figcaption>
+      <p align="center"><b>Figura 2</b> -Interface do Sistema Gerenciador</p>
+      <p align="center">Fonte: Autoral</p>
+    </figcaption>
+  </figure>
+</div>
