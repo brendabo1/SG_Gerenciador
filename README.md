@@ -1,7 +1,7 @@
 <h1 align="center">Sistema Gerenciador</h1>
 <p align="center"><b>Sistema para gerenciamento de vendas para bares e restaurantes.</b></p>
 
-<p>Sistema desenvido no componente curricular EXA805 - Algoritmos e Programação II no semestre 2022.1 para o aprendizado da Programação Orientada à Objetos e seus fundamentos bem como padrões de projetos e arquitetura.</p>
+<p>Sistema desenvido no componente curricular EXA863 - MI Algoritmos e Programação II no semestre 2022.1 sob a metodologia PBL para o aprendizado da Programação Orientada à Objetos e seus fundamentos bem como padrões de projetos e arquitetura.</p>
 <p>Atendendo aos requisitos, o projeto foi desenvolvido através da linguagem de programação Java sob a arquitetura MVC (Model-View-Controller) aliada ao padrão de projeto <i>Facade</i>. Além disso, JavaFX doi utilizado na implementação da interface gráfica  </p>
 
 <h2>Funcionalidades</h2>
